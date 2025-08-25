@@ -18,10 +18,31 @@
                     </li>
                 </ul>
             </nav>
-            <button class="demo">Agendar demonstração</button>
+            <Button text="Agendar demonstração" targetId="contact-section" class="btn demo"
+                @buttonClick="$emit('navigateToSection', $event)" />
         </div>
     </div>
 </template>
+
+<script>
+import Button from './Button.vue';
+
+export default {
+    name: 'Navbar',
+    components: {
+        Button
+    },
+    emits: ['navigateToSection'],
+    methods: {
+        navigateToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+};
+</script>
 
 <style scoped>
 .navbar-wrapper {

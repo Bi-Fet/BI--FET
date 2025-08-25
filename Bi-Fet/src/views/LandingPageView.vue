@@ -11,7 +11,10 @@ import Hero from '@/components/Hero.vue'
 
 export default {
   name: 'LandingPageView',
-  components: { Navbar, Hero }
+  components: { 
+    Navbar, 
+    Hero 
+  }
 }
 </script>
 
